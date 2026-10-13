@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <title>StudioQuix® — Architecture / 3D / Visualization</title>
+  <meta name="description" content="StudioQuix — architecture, 3D modeling and architectural visualization." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="progress" id="progress"></div>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo-wrap" aria-label="StudioQuix QX mark">
+      <img class="qx-exact-mark" src="assets/qx-monogram.png" alt="StudioQuix QX monogram">
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor"><span>VIEW</span></div>
+
+  <header class="nav">
+    <a class="brand magnetic" href="#home">STUDIOQUIX<sup>®</sup></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="magnetic" href="#home">HOME</a>
+      <a class="magnetic" href="#about">ABOUT</a>
+      <a class="magnetic" href="#works">WORKS</a>
+      <a class="magnetic" href="#contact">CONTACT</a>
+    </nav>
+    <div class="availability"><i></i> AVAILABLE 2026</div>
+  </header>
+
+  <main>
+    <!-- HOME: only the orbital project index -->
+    <section class="home-orbit" id="home">
+      <div class="orbital-stage home-stage" id="orbitalStage" aria-label="Interactive StudioQuix project index">
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="orbit-center" aria-label="QX monogram">
+          <img src="assets/qx-monogram.png" alt="QX">
+        </div>
+        <div class="orbit-items" id="orbitItems"></div>
+      </div>
+      <div class="home-hint">DRAG IN ANY DIRECTION — CLICK TO OPEN PROJECT</div>
+    </section>
+
+    <section class="about reveal-section" id="about">
+      <div class="section-label"><span>01 — ABOUT</span><span>STUDIO / FOUNDER</span></div>
+
+      <div class="about-dual">
+        <article class="about-panel studio-about reveal">
+          <span class="about-eyebrow">STUDIOQUIX</span>
+          <h2>ARCHITECTURE<br>MEETS <em>DIGITAL<br>IMAGE-MAKING.</em></h2>
+          <p class="about-lead">StudioQuix is an independent architecture and visualization practice focused on atmosphere, materiality and spatial storytelling.</p>
+          <p>Projects are approached as complete visual systems — model, light, material, camera and narrative — rather than as isolated renders. The goal is to turn architectural work into clear, atmospheric and memorable visual stories.</p>
+
+          <div class="services compact-services">
+            <div><span>01</span><strong>ARCHITECTURAL VISUALIZATION</strong></div>
+            <div><span>02</span><strong>3D MODELING</strong></div>
+            <div><span>03</span><strong>COMPETITION IMAGERY</strong></div>
+            <div><span>04</span><strong>DIGITAL ENVIRONMENTS</strong></div>
+          </div>
+        </article>
+
+        <article class="about-panel founder-about reveal">
+          <div class="founder-top">
+            <div class="founder-photo-wrap">
+              <img src="assets/mehmet-unal-portrait.jpg" alt="Portrait of Mehmet Ünal" class="founder-photo">
+            </div>
+
+            <div class="founder-intro">
+              <span class="about-eyebrow">MEHMET ÜNAL / FOUNDER</span>
+              <h3>ARCHITECTURE STUDENT<br>&amp; VISUALIZATION ARTIST.</h3>
+              <p>Mehmet Ünal is an architecture student at Pamukkale University working across architectural design, visualization and post-production. StudioQuix brings together his interest in architecture, digital image-making and spatial storytelling.</p>
+            </div>
+          </div>
+
+          <div class="cv-grid">
+            <div class="cv-block">
+              <span class="cv-title">EDUCATION</span>
+              <div class="cv-row"><span>2022 — ongoing</span><strong>Pamukkale University<br>Department of Architecture</strong></div>
+            </div>
+
+            <div class="cv-block">
+              <span class="cv-title">EXPERIENCE</span>
+              <div class="cv-row"><span>2026</span><strong>Bahadır Kul Architects<br>Architectural Intern</strong></div>
+              <div class="cv-row"><span>Earlier</span><strong>Atölye B / Reform Yapı / Freelance<br>Visualization, CAD and digital work</strong></div>
+            </div>
+
+            <div class="cv-block">
+              <span class="cv-title">SELECTED RECOGNITION</span>
+              <a class="cv-row cv-row-link" href="projects/musterek.html"><span>2026</span><strong>MDC'26 Student Architectural Design Competition<br>Jury Special Award — MÜŞTEREK →</strong></a>
+              <a class="cv-row cv-row-link" href="projects/ullr-tengri.html"><span>2025</span><strong>Lund University<br>Best Render Award — Ullr Tengri →</strong></a>
+            </div>
+
+            <div class="cv-block">
+              <span class="cv-title">PUBLISHED ON ARKITERA</span>
+              <a class="cv-row cv-row-link" href="https://www.arkitera.com/proje/juri-ozel-odulu-mdc26-ogrenci-mimari-tasarim-ve-fikir-yarismasi/" target="_blank" rel="noopener"><span>2026</span><strong>MÜŞTEREK — MDC'26<br>Jury Special Award ↗</strong></a>
+              <a class="cv-row cv-row-link" href="https://www.arkitera.com/proje/katilimci-light-of-tomorrow-by-velux-2026/" target="_blank" rel="noopener"><span>2026</span><strong>CHELOMAR — Light of Tomorrow by VELUX<br>Participant ↗</strong></a>
+              <a class="cv-row cv-row-link" href="https://www.arkitera.com/etiket/mehmet-unal/" target="_blank" rel="noopener"><span>Arkitera</span><strong>All publications ↗</strong></a>
+            </div>
+
+            <div class="cv-block">
+              <span class="cv-title">LINKS</span>
+              <div class="cv-links">
+                <a href="https://www.linkedin.com/in/mehrnetunal/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+                <a href="https://instagram.com/mehrnetunal" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="works reveal-section" id="works">
+      <div class="section-label">
+        <span>02 — WORKS</span>
+        <div class="view-switch">
+          <button class="view-btn active" data-view="grid">GRID</button><span>/</span><button class="view-btn" data-view="list">LIST</button>
+        </div>
+      </div>
+
+      <div class="works-intro">
+        <h2>SELECTED<br><em>WORKS.</em></h2>
+        <p>Architecture, visualization and digital artworks.</p>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article id="project-ullr-tengri" class="project-card reveal"
+          data-title="ULLR TENGRI" data-type="LUND UNIVERSITY / BEST RENDER AWARD" data-year="2025" data-image="assets/projects/ullr-tengri/render-01-aurora.jpg" data-url="projects/ullr-tengri.html">
+          <button class="project-hit" aria-label="Open ULLR TENGRI project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/ullr-tengri/render-01-aurora.jpg" alt="ULLR TENGRI">
+          </div>
+          <div class="project-info">
+            <span class="project-no">01</span>
+            <h3>ULLR TENGRI</h3>
+            <span>LUND UNIVERSITY / BEST RENDER AWARD</span>
+            <span>2025</span>
+          </div>
+        </article>
+
+        <article id="project-kent-enstitusu" class="project-card reveal"
+          data-title="KENT ENSTİTÜSÜ" data-type="MİM307 / URBAN INSTITUTE" data-year="DENİZLİ" data-image="assets/projects/kent-enstitusu/cover.jpg" data-url="projects/kent-enstitusu.html">
+          <button class="project-hit" aria-label="Open KENT ENSTİTÜSÜ project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/kent-enstitusu/cover.jpg" alt="KENT ENSTİTÜSÜ">
+          </div>
+          <div class="project-info">
+            <span class="project-no">02</span>
+            <h3>KENT ENSTİTÜSÜ</h3>
+            <span>MİM307 / URBAN INSTITUTE</span>
+            <span>DENİZLİ</span>
+          </div>
+        </article>
+
+        <article id="project-dental-faculty" class="project-card reveal"
+          data-title="DİŞ FAKÜLTESİ" data-type="MİM308 / DENTAL HOSPITAL" data-year="DENİZLİ" data-image="assets/projects/dental-faculty/final-render.jpg" data-url="projects/dental-faculty.html">
+          <button class="project-hit" aria-label="Open DİŞ FAKÜLTESİ project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/dental-faculty/final-render.jpg" alt="DİŞ FAKÜLTESİ">
+          </div>
+          <div class="project-info">
+            <span class="project-no">03</span>
+            <h3>DİŞ FAKÜLTESİ</h3>
+            <span>MİM308 / DENTAL HOSPITAL</span>
+            <span>DENİZLİ</span>
+          </div>
+        </article>
+
+        <article id="project-musterek" class="project-card reveal"
+          data-title="MÜŞTEREK" data-type="MDC'26 / JURY SPECIAL AWARD" data-year="2026" data-image="assets/projects/musterek/render-01.jpg" data-url="projects/musterek.html">
+          <button class="project-hit" aria-label="Open MÜŞTEREK project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/musterek/render-01.jpg" alt="MÜŞTEREK">
+          </div>
+          <div class="project-info">
+            <span class="project-no">04</span>
+            <h3>MÜŞTEREK</h3>
+            <span>MDC'26 / JURY SPECIAL AWARD</span>
+            <span>2026</span>
+          </div>
+        </article>
+
+        <article id="project-chelo" class="project-card reveal"
+          data-title="CHELOMAR" data-type="VELUX LIGHT OF TOMORROW" data-year="2026" data-image="assets/projects/chelo/thumbnail.jpg" data-url="projects/chelo.html">
+          <button class="project-hit" aria-label="Open CHELOMAR project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/chelo/thumbnail.jpg" alt="CHELOMAR">
+          </div>
+          <div class="project-info">
+            <span class="project-no">05</span>
+            <h3>CHELOMAR</h3>
+            <span>VELUX LIGHT OF TOMORROW</span>
+            <span>2026</span>
+          </div>
+        </article>
+
+        <article id="project-villa-barcelona" class="project-card reveal"
+          data-title="VILLA BARCELONA" data-type="RESIDENTIAL / VISUALIZATION" data-year="STUDIOQUIX" data-image="assets/projects/villa-barcelona/pool-dusk.jpg" data-url="projects/villa-barcelona.html">
+          <button class="project-hit" aria-label="Open VILLA BARCELONA project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/villa-barcelona/pool-dusk.jpg" alt="VILLA BARCELONA">
+          </div>
+          <div class="project-info">
+            <span class="project-no">06</span>
+            <h3>VILLA BARCELONA</h3>
+            <span>RESIDENTIAL / VISUALIZATION</span>
+            <span>STUDIOQUIX</span>
+          </div>
+        </article>
+
+        <article id="project-buhara-arena" class="project-card reveal"
+          data-title="BUHARA ARENA by BKA" data-type="3D MODEL &amp; VISUALIZATION" data-year="BKA" data-image="assets/projects/buhara-arena/01-sunset.jpg" data-url="projects/buhara-arena.html">
+          <button class="project-hit" aria-label="Open BUHARA ARENA by BKA project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/buhara-arena/01-sunset.jpg" alt="BUHARA ARENA by BKA">
+          </div>
+          <div class="project-info">
+            <span class="project-no">07</span>
+            <h3>BUHARA ARENA by BKA</h3>
+            <span>3D MODEL &amp; VISUALIZATION</span>
+            <span>BKA</span>
+          </div>
+        </article>
+
+        <article id="project-ataturk-stadyumu" class="project-card reveal"
+          data-title="ATATÜRK STADYUMU by BKA" data-type="3D MODEL &amp; VISUALIZATION" data-year="BKA" data-image="assets/projects/ataturk-stadyumu/10.jpg" data-url="projects/ataturk-stadyumu.html">
+          <button class="project-hit" aria-label="Open ATATÜRK STADYUMU by BKA project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/ataturk-stadyumu/10.jpg" alt="ATATÜRK STADYUMU by BKA">
+          </div>
+          <div class="project-info">
+            <span class="project-no">08</span>
+            <h3>ATATÜRK STADYUMU by BKA</h3>
+            <span>3D MODEL &amp; VISUALIZATION</span>
+            <span>BKA</span>
+          </div>
+        </article>
+
+        <article id="project-yangi-toshkent-arena" class="project-card reveal"
+          data-title="YANGI TOSHKENT ARENA by BKA" data-type="3D MODEL &amp; VISUALIZATION" data-year="BKA" data-image="assets/projects/yangi-toshkent-arena/arena-sign.jpg" data-url="projects/yangi-toshkent-arena.html">
+          <button class="project-hit" aria-label="Open YANGI TOSHKENT ARENA by BKA project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/yangi-toshkent-arena/arena-sign.jpg" alt="YANGI TOSHKENT ARENA by BKA">
+          </div>
+          <div class="project-info">
+            <span class="project-no">09</span>
+            <h3>YANGI TOSHKENT ARENA by BKA</h3>
+            <span>3D MODEL &amp; VISUALIZATION</span>
+            <span>BKA</span>
+          </div>
+        </article>
+
+        <!-- DIGITAL ARTWORKS: always keep this card LAST in the grid. Add new projects ABOVE this line. -->
+        <article id="project-digital-artworks" class="project-card reveal"
+          data-title="DIGITAL ARTWORKS" data-type="ILLUSTRATION / DIGITAL PAINTING" data-year="ONGOING" data-image="assets/projects/digital-artworks/art-03-towers.jpg" data-url="projects/digital-artworks.html">
+          <button class="project-hit" aria-label="Open DIGITAL ARTWORKS project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/digital-artworks/art-03-towers.jpg" alt="DIGITAL ARTWORKS">
+          </div>
+          <div class="project-info">
+            <span class="project-no">∞</span>
+            <h3>DIGITAL ARTWORKS</h3>
+            <span>ILLUSTRATION / DIGITAL PAINTING</span>
+            <span>ONGOING</span>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="contact reveal-section" id="contact">
+      <div class="section-label light"><span>03 — CONTACT</span><span>START A PROJECT</span></div>
+
+      <div class="contact-main">
+        <a href="mailto:mehmet@studioquix.com" class="contact-mail magnetic">
+          MEHMET@STUDIOQUIX.COM <span>↗</span>
+        </a>
+
+        <div class="contact-details">
+          <p>ARCHITECTURE / 3D VISUALIZATION / DIGITAL ASSETS</p>
+          <a href="tel:+905079622208">+90 507 962 2208</a>
+          <p>DENİZLİ, TÜRKİYE — WORKING WORLDWIDE</p>
+        </div>
+      </div>
+
+      <div class="contact-footer">
+        <span>STUDIOQUIX®</span>
+        <span>QX / 2026</span>
+        <span><a href="https://instagram.com/mehrnetunal" target="_blank" rel="noopener">INSTAGRAM ↗</a> &nbsp;&nbsp; <a href="https://www.linkedin.com/in/mehrnetunal/" target="_blank" rel="noopener">LINKEDIN ↗</a></span>
+        <span>© 2026</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <button class="modal-close magnetic" id="modalClose">CLOSE ×</button>
+    <div class="modal-media"><img id="modalImage" src="" alt=""></div>
+    <div class="modal-meta"><span id="modalYear"></span><h2 id="modalTitle"></h2><p id="modalType"></p><p class="modal-copy">This overlay can later become a complete case-study page with project text, drawings, images and video.</p></div>
+  </div>
+
+  <script>window.ORBIT_MODE="electron"</script>
+  <script src="script.js"></script>
+</body>
+</html>
