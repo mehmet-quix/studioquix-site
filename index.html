@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#080808" />
   <title>StudioQuix® — Architecture / 3D / Visualization</title>
-  <meta name="description" content="StudioQuix — architecture, 3D modeling and architectural visualization." />
+  <meta name="description" content="StudioQuix by Mehmet Ünal — architecture, 3D modeling and architectural visualization. Award-winning student projects and BKA visualizations." />
+  <link rel="canonical" href="https://studioquix.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="StudioQuix" />
+  <meta property="og:title" content="StudioQuix® — Architecture / 3D / Visualization" />
+  <meta property="og:description" content="StudioQuix by Mehmet Ünal — architecture, 3D modeling and architectural visualization." />
+  <meta property="og:url" content="https://studioquix.com/" />
+  <meta property="og:image" content="https://studioquix.com/assets/projects/ullr-tengri/render-01-aurora.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mehmet Ünal","url":"https://studioquix.com/","email":"mailto:mehmet@studioquix.com","jobTitle":"Architectural designer & 3D visualizer","brand":{"@type":"Brand","name":"StudioQuix"},"sameAs":["https://www.linkedin.com/in/mehrnetunal/","https://www.arkitera.com/etiket/mehmet-unal/"]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -46,6 +55,7 @@
         <div class="orbit-items" id="orbitItems"></div>
       </div>
       <div class="home-hint">DRAG IN ANY DIRECTION — CLICK TO OPEN PROJECT</div>
+      <a class="swipe-hint" href="#about" aria-label="Swipe for more">SWIPE FOR MORE <span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="about reveal-section" id="about">
@@ -53,7 +63,7 @@
 
       <div class="about-dual">
         <article class="about-panel studio-about reveal">
-          <span class="about-eyebrow">STUDIOQUIX</span>
+          <span class="about-eyebrow about-name">STUDIOQUIX<sup>®</sup></span>
           <h2>ARCHITECTURE<br>MEETS <em>DIGITAL<br>IMAGE-MAKING.</em></h2>
           <p class="about-lead">StudioQuix is an independent architecture and visualization practice focused on atmosphere, materiality and spatial storytelling.</p>
           <p>Projects are approached as complete visual systems — model, light, material, camera and narrative — rather than as isolated renders. The goal is to turn architectural work into clear, atmospheric and memorable visual stories.</p>
@@ -68,14 +78,18 @@
 
         <article class="about-panel founder-about reveal">
           <div class="founder-top">
-            <div class="founder-photo-wrap">
-              <img src="assets/mehmet-unal-portrait.jpg" alt="Portrait of Mehmet Ünal" class="founder-photo">
-            </div>
+            <button class="founder-photo-wrap photo-cycle" type="button" aria-label="Show next photo of Mehmet Ünal">
+              <img src="assets/about-01.jpg" alt="Mehmet Ünal" class="founder-photo is-active">
+              <img src="assets/mehmet-unal-portrait.jpg" alt="Portrait of Mehmet Ünal" class="founder-photo" loading="lazy">
+              <img src="assets/about-03.jpg" alt="Mehmet Ünal smiling in the studio" class="founder-photo" loading="lazy">
+              <img src="assets/about-04-mdc.jpg" alt="Mehmet Ünal presenting at the MDC'26 Miniature Design Competition" class="founder-photo" loading="lazy">
+              <span class="photo-count"><b>01</b> / 04</span>
+            </button>
 
             <div class="founder-intro">
-              <span class="about-eyebrow">MEHMET ÜNAL / FOUNDER</span>
-              <h3>ARCHITECTURE STUDENT<br>&amp; VISUALIZATION ARTIST.</h3>
-              <p>Mehmet Ünal is an architecture student at Pamukkale University working across architectural design, visualization and post-production. StudioQuix brings together his interest in architecture, digital image-making and spatial storytelling.</p>
+              <span class="about-eyebrow about-name">MEHMET ÜNAL <small>/ FOUNDER</small></span>
+              <h3>ARCHITECTURAL DESIGNER<br>&amp; VISUALIZATION ARTIST.</h3>
+              <p>Mehmet Ünal works across architectural design, visualization and post-production, with a background in architecture at Pamukkale University. StudioQuix brings together his interest in architecture, digital image-making and spatial storytelling.</p>
             </div>
           </div>
 
@@ -214,6 +228,62 @@
           </div>
         </article>
 
+        <article id="project-pool-day" class="project-card reveal"
+          data-title="POOL DAY" data-type="24 HOUR STUDENT RENDER CHALLENGE" data-year="STUDIOQUIX" data-image="assets/projects/pool-day/02-dusk.jpg" data-url="projects/pool-day.html">
+          <button class="project-hit" aria-label="Open POOL DAY project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/pool-day/02-dusk.jpg" alt="POOL DAY">
+          </div>
+          <div class="project-info">
+            <span class="project-no">07</span>
+            <h3>POOL DAY</h3>
+            <span>24 HOUR STUDENT RENDER CHALLENGE</span>
+            <span>STUDIOQUIX</span>
+          </div>
+        </article>
+
+        <article id="project-geek-house" class="project-card reveal"
+          data-title="GEEK HOUSE" data-type="INTERIOR / VISUALIZATION" data-year="STUDIOQUIX" data-image="assets/projects/geek-house/01-living.jpg" data-url="projects/geek-house.html">
+          <button class="project-hit" aria-label="Open GEEK HOUSE project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/geek-house/01-living.jpg" alt="GEEK HOUSE">
+          </div>
+          <div class="project-info">
+            <span class="project-no">08</span>
+            <h3>GEEK HOUSE</h3>
+            <span>INTERIOR / VISUALIZATION</span>
+            <span>STUDIOQUIX</span>
+          </div>
+        </article>
+
+        <article id="project-lofi-house" class="project-card reveal"
+          data-title="LOFI HOUSE" data-type="INTERIOR / VISUALIZATION" data-year="STUDIOQUIX" data-image="assets/projects/lofi-house/01-loft.jpg" data-url="projects/lofi-house.html">
+          <button class="project-hit" aria-label="Open LOFI HOUSE project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/lofi-house/01-loft.jpg" alt="LOFI HOUSE">
+          </div>
+          <div class="project-info">
+            <span class="project-no">09</span>
+            <h3>LOFI HOUSE</h3>
+            <span>INTERIOR / VISUALIZATION</span>
+            <span>STUDIOQUIX</span>
+          </div>
+        </article>
+
+        <article id="project-cinema-bedroom" class="project-card reveal"
+          data-title="CINEMA BEDROOM" data-type="INTERIOR / VISUALIZATION" data-year="STUDIOQUIX" data-image="assets/projects/cinema-bedroom/01-screen.jpg" data-url="projects/cinema-bedroom.html">
+          <button class="project-hit" aria-label="Open CINEMA BEDROOM project"></button>
+          <div class="project-media hover-media">
+            <img src="assets/projects/cinema-bedroom/01-screen.jpg" alt="CINEMA BEDROOM">
+          </div>
+          <div class="project-info">
+            <span class="project-no">10</span>
+            <h3>CINEMA BEDROOM</h3>
+            <span>INTERIOR / VISUALIZATION</span>
+            <span>STUDIOQUIX</span>
+          </div>
+        </article>
+
         <article id="project-buhara-arena" class="project-card reveal"
           data-title="BUHARA ARENA by BKA" data-type="3D MODEL &amp; VISUALIZATION" data-year="BKA" data-image="assets/projects/buhara-arena/01-sunset.jpg" data-url="projects/buhara-arena.html">
           <button class="project-hit" aria-label="Open BUHARA ARENA by BKA project"></button>
@@ -221,7 +291,7 @@
             <img src="assets/projects/buhara-arena/01-sunset.jpg" alt="BUHARA ARENA by BKA">
           </div>
           <div class="project-info">
-            <span class="project-no">07</span>
+            <span class="project-no">11</span>
             <h3>BUHARA ARENA by BKA</h3>
             <span>3D MODEL &amp; VISUALIZATION</span>
             <span>BKA</span>
@@ -235,7 +305,7 @@
             <img src="assets/projects/ataturk-stadyumu/10.jpg" alt="ATATÜRK STADYUMU by BKA">
           </div>
           <div class="project-info">
-            <span class="project-no">08</span>
+            <span class="project-no">12</span>
             <h3>ATATÜRK STADYUMU by BKA</h3>
             <span>3D MODEL &amp; VISUALIZATION</span>
             <span>BKA</span>
@@ -249,7 +319,7 @@
             <img src="assets/projects/yangi-toshkent-arena/arena-sign.jpg" alt="YANGI TOSHKENT ARENA by BKA">
           </div>
           <div class="project-info">
-            <span class="project-no">09</span>
+            <span class="project-no">13</span>
             <h3>YANGI TOSHKENT ARENA by BKA</h3>
             <span>3D MODEL &amp; VISUALIZATION</span>
             <span>BKA</span>
@@ -302,7 +372,6 @@
     <div class="modal-meta"><span id="modalYear"></span><h2 id="modalTitle"></h2><p id="modalType"></p><p class="modal-copy">This overlay can later become a complete case-study page with project text, drawings, images and video.</p></div>
   </div>
 
-  <script>window.ORBIT_MODE="electron"</script>
   <script src="script.js"></script>
 </body>
 </html>

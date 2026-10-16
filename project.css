@@ -842,3 +842,9 @@ html.lightbox-open .nav{opacity:0;pointer-events:none}
 .credit-banner p{grid-column:1/-1;margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
 .project-info h2 em{font-style:normal;color:transparent;-webkit-text-stroke:1px var(--fg)}
 @media(max-width:850px){.credit-banner{grid-template-columns:auto 1fr;width:calc(100% - 36px);margin-top:-30px}}
+
+/* Renders: show whole frame, never crop */
+.media-render img{max-height:none!important;height:auto;object-fit:contain;background:transparent}
+.media-render.render-square img{max-width:min(860px,100%);margin:0 auto;display:block}
+.media-split.render-pair img{aspect-ratio:4/3;object-fit:cover}
+@media(max-width:900px){.media-split.render-pair img{aspect-ratio:4/3}}

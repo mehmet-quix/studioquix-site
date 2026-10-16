@@ -132,6 +132,10 @@ const projectData=[
   ["MÜŞTEREK","assets/projects/musterek/spatial-practices.jpg","projects/musterek.html"],
   ["CHELOMAR","assets/projects/chelo/thumbnail.jpg","projects/chelo.html"],
   ["VILLA BARCELONA","assets/projects/villa-barcelona/pool-dusk.jpg","projects/villa-barcelona.html"],
+  ["POOL DAY","assets/projects/pool-day/02-dusk.jpg","projects/pool-day.html"],
+  ["GEEK HOUSE","assets/projects/geek-house/01-living.jpg","projects/geek-house.html"],
+  ["LOFI HOUSE","assets/projects/lofi-house/01-loft.jpg","projects/lofi-house.html"],
+  ["CINEMA BEDROOM","assets/projects/cinema-bedroom/01-screen.jpg","projects/cinema-bedroom.html"],
   ["BUHARA ARENA by BKA","assets/projects/buhara-arena/01-sunset.jpg","projects/buhara-arena.html"],
   ["ATATÜRK STADYUMU by BKA","assets/projects/ataturk-stadyumu/10.jpg","projects/ataturk-stadyumu.html"],
   ["YANGI TOSHKENT ARENA by BKA","assets/projects/yangi-toshkent-arena/arena-sign.jpg","projects/yangi-toshkent-arena.html"]
@@ -185,7 +189,7 @@ const RINGS=[ // inclination (rad) around X, then spin around Z — a classic at
   {tilt:1.18, spin:-1.05, speed: .040}
 ];
 // ring 0: own studio work · ring 1: studio projects · ring 2: BKA visualisation work
-const RING_OF=i=>{const t=projectData[i][0]; if(/BKA/.test(t)) return 2; if(/VILLA|MÜŞTEREK|CHELOMAR/.test(t)) return 1; return 0;};
+const RING_OF=i=>{const t=projectData[i][0]; if(/BKA/.test(t)) return 2; if(/VILLA|MÜŞTEREK|CHELOMAR|POOL DAY|GEEK HOUSE|LOFI HOUSE|CINEMA BEDROOM/.test(t)) return 1; return 0;};
 const ringMembers=[[],[],[]]; projectData.forEach((p,i)=>ringMembers[RING_OF(i)].push(i));
 const ringPhase=projectData.map((p,i)=>{const r=RING_OF(i),m=ringMembers[r]; return (m.indexOf(i)/m.length)*Math.PI*2 + r*0.7;});
 function ringPoint(r,theta){
@@ -226,7 +230,7 @@ function drawRings(radius){
 }
 
 // These three values are the actual orbit orientation.
-// They NEVER automatically return to zero and never auto-rotate.
+// They never snap back to zero; when idle the orbit slowly spins around Y.
 let ry=0, rx=-0.12, rz=0;
 let targetRy=0, targetRx=-0.12, targetRz=0;
 
@@ -238,6 +242,8 @@ let downProject=null;
 let orbitIntro=0;
 let lastTime=performance.now();
 const DRAG_THRESHOLD=7;
+const AUTO_SPIN_SPEED=.0024; // rad per frame (~45 s per full turn)
+let autoSpin=0, spinResumeAt=0;
 
 stage?.addEventListener("pointerenter",e=>{
   if(!e.target.closest?.(".orbit-item")) cursorOn("DRAG");
@@ -343,6 +349,13 @@ function orbitLoop(now){
   orbitIntro=clamp(orbitIntro+.018*dt,0,1);
   const intro=easeOutCubic(orbitIntro);
 
+  // Idle auto-spin: the orbit keeps sliding on its own; pauses while dragging or hovering a project,
+  // then eases back in a moment after the user lets go.
+  const wantSpin=(drag||hoveredIndex>=0)?0:1;
+  if(drag) spinResumeAt=now+1200;
+  autoSpin+=((now<spinResumeAt?0:wantSpin)-autoSpin)*.035*dt;
+  targetRy+=AUTO_SPIN_SPEED*autoSpin*dt;
+
   // Smoothly arrive at the user's chosen orientation, then stay there.
   ry+=(targetRy-ry)*(.09*dt);
   rx+=(targetRx-rx)*(.09*dt);
@@ -359,7 +372,9 @@ function orbitLoop(now){
   }
   points.forEach((p,i)=>{
     if(ELECTRON){ const r=RING_OF(i); p=ringPoint(r,ringPhase[i]+electronClock*RINGS[r].speed*6); const k=ELECTRON_SCALE(); p={x:p.x*k,y:p.y*k,z:p.z}; }
-    const q=rotatePoint(p,rx,ry,rz);
+    // idle tumble: besides spinning around Y, the orbit slowly tips up/down (X) and rolls (Z)
+    const wob=autoSpin;
+    const q=rotatePoint(p, rx+wob*.42*Math.sin(t*.21), ry, rz+wob*.22*Math.sin(t*.15+1.3));
     const depth=(q.z+1)/2;
 
     // Live animation without changing orbital orientation:
@@ -459,3 +474,15 @@ function closeModal(){
 }
 modalClose?.addEventListener("click",closeModal);
 window.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+/* About photo cycle — click/tap to crossfade through photos */
+(function(){
+  const box=document.querySelector(".photo-cycle"); if(!box) return;
+  const imgs=[...box.querySelectorAll(".founder-photo")], num=box.querySelector(".photo-count");
+  let i=0; const pad=n=>String(n).padStart(2,"0");
+  if(num) num.innerHTML=`<b>01</b> / ${pad(imgs.length)}`;
+  box.addEventListener("click",()=>{
+    imgs[i].classList.remove("is-active"); i=(i+1)%imgs.length; imgs[i].classList.add("is-active");
+    if(num) num.innerHTML=`<b>${pad(i+1)}</b> / ${pad(imgs.length)}`;
+  });
+})();
