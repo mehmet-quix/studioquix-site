@@ -486,3 +486,19 @@ window.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
     if(num) num.innerHTML=`<b>${pad(i+1)}</b> / ${pad(imgs.length)}`;
   });
 })();
+
+/* Middle-click (mouse wheel button) opens a project in a new tab — orbit items and Works cards */
+(function(){
+  const urlOf=el=>{
+    const o=el.closest?.(".orbit-item"); if(o) return o.dataset.projectUrl||o.getAttribute("href");
+    const c=el.closest?.(".project-card"); if(c) return c.dataset.url;
+    return null;
+  };
+  document.addEventListener("mousedown",e=>{ if(e.button===1 && urlOf(e.target)) e.preventDefault(); },true); // no autoscroll icon
+  document.addEventListener("auxclick",e=>{
+    if(e.button!==1) return;
+    const url=urlOf(e.target); if(!url) return;
+    e.preventDefault(); e.stopPropagation();
+    window.open(url,"_blank","noopener");
+  },true);
+})();
