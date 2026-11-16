@@ -489,6 +489,11 @@ window.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 
 /* Middle-click (mouse wheel button) opens a project in a new tab — orbit items and Works cards */
 (function(){
+  // BKA projects: middle-click opens the project on the BKA website
+  const EXTERNAL={
+    "yangi-toshkent-arena.html":"https://bkaarchitecture.com/work/yangi%CC%87-tashkent-arena",
+    "buhara-arena.html":"https://bkaarchitecture.com/work/buhara-stadium"
+  };
   const urlOf=el=>{
     const o=el.closest?.(".orbit-item"); if(o) return o.dataset.projectUrl||o.getAttribute("href");
     const c=el.closest?.(".project-card"); if(c) return c.dataset.url;
@@ -499,6 +504,7 @@ window.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
     if(e.button!==1) return;
     const url=urlOf(e.target); if(!url) return;
     e.preventDefault(); e.stopPropagation();
-    window.open(url,"_blank","noopener");
+    const key=Object.keys(EXTERNAL).find(k=>url.includes(k));
+    window.open(key?EXTERNAL[key]:url,"_blank","noopener");
   },true);
 })();
